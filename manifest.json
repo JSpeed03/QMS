@@ -1,0 +1,21 @@
+{
+  "name": "ECA-LB-SSQMS",
+  "short_name": "QMS",
+  "description": "Queue Management System for ECA-LB",
+  "start_url": "/index.php",
+  "display": "standalone",
+  "background_color": "#652eff",
+  "theme_color": "#652eff",
+  "icons": [
+    {
+      "src": "logo/QMS-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo/QMS-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
