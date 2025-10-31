@@ -18,11 +18,13 @@ header {
     align-items: center;
     padding: 10px;
     text-align: center;
-    font-size: 72px;
+    font-size: 5vw; /* Responsive font size */
+    width: 100%;
 }
 
 header img {
-    width: 250px;
+    width: 15vw; /* Responsive width */
+    max-width: 250px; /* Max width to prevent too large on big screens */
     height: auto;
     object-fit: contain;
 }
@@ -31,7 +33,8 @@ h1 {
     text-align: center;
     position: fixed;
     top: 20%;
-    font-size: 200px;
+    font-size: 15vw; /* Responsive font size */
+    max-font-size: 200px; /* Max size for large screens */
 }
 
 h2 {
@@ -40,7 +43,8 @@ h2 {
     top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 24px; /* Adjust as needed */
+    font-size: 2vw; /* Responsive font size */
+    min-font-size: 18px; /* Min size for small screens */
     margin-bottom: 10px; /* Optional: Add spacing between heading and paragraph */
 }
 
@@ -50,7 +54,8 @@ p {
     bottom: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 18px; /* Optional: Adjust font size */
+    font-size: 1.5vw; /* Responsive font size */
+    min-font-size: 14px; /* Min size for small screens */
     margin-bottom: 20px; /* Optional: Add spacing between heading and paragraph */
 }
 
@@ -68,7 +73,8 @@ footer {
     transform: translateX(-50%);
     text-align: center;
     color: #000000; /* Text color for footer */
-    font-size: 14px; /* Adjust font size as needed */
+    font-size: 1vw; /* Responsive font size */
+    min-font-size: 12px; /* Min size for small screens */
     margin-top: 10px; /* Add spacing between the button and the footer */
 }
 
@@ -76,8 +82,9 @@ button {
     background-color: yellow; /* Yellow button color */
     color: #000000; /* Text color for button */
     border: none;
-    padding: 20px 40px; /*button size*/
-    font-size: 16px;
+    padding: 1.5vw 3vw; /* Responsive padding */
+    font-size: 1.2vw; /* Responsive font size */
+    min-font-size: 14px; /* Min size for small screens */
     cursor: pointer;
     border-radius: 5px;
 }
@@ -93,6 +100,77 @@ a {
 
 a:hover {
     color: #ecf0f1; /* Lighter text color on hover */
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    header {
+        font-size: 6vw;
+    }
+
+    header img {
+        width: 20vw;
+    }
+
+    h1 {
+        font-size: 20vw;
+        top: 25%;
+    }
+
+    h2 {
+        font-size: 3vw;
+        top: 65%;
+    }
+
+    p {
+        font-size: 2vw;
+        bottom: 10%;
+    }
+
+    footer {
+        font-size: 1.5vw;
+    }
+
+    button {
+        padding: 2vw 4vw;
+        font-size: 1.5vw;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    header {
+        font-size: 7vw;
+        padding: 5px;
+    }
+
+    header img {
+        width: 25vw;
+    }
+
+    h1 {
+        font-size: 25vw;
+        top: 30%;
+    }
+
+    h2 {
+        font-size: 4vw;
+        top: 60%;
+    }
+
+    p {
+        font-size: 3vw;
+        bottom: 15%;
+    }
+
+    footer {
+        font-size: 2vw;
+    }
+
+    button {
+        padding: 3vw 5vw;
+        font-size: 2vw;
+    }
 }
 
 @media print {

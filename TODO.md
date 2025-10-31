@@ -1,10 +1,7 @@
-# PWA Conversion for ECA-LB-SSQMS (Root to Kiosk)
+# Make Ticket.php Responsive
 
-- [x] Create manifest.json with app metadata and icons (Kiosk only)
-- [x] Create service-worker.js for caching static assets (Kiosk only)
-- [x] Edit index.html to reference manifest and register service worker (Kiosk only)
-- [x] Move manifest.json to root directory
-- [x] Update manifest.json for full app (change start_url to "/index.php", update name and description)
-- [x] Update service-worker.js to cache root assets (index.php, Home_bg_Video videos, logos) and existing Kiosk assets
-- [x] Edit index.php to link manifest and register service worker
-- [x] Test PWA installation on mobile (manifest and service worker accessible, valid JSON, correct paths)
+- [x] Update base styles in TicketStyle.css to use relative units for better scalability
+- [x] Add media query for tablets (max-width: 768px) to adjust font sizes and positions
+- [x] Add media query for mobiles (max-width: 480px) to further reduce sizes and ensure readability
+- [x] Preserve existing print media query
+- [x] Test the responsive design on different screen sizes (server started, but browser tool disabled; manual testing recommended)

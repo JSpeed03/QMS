@@ -11,18 +11,18 @@
             justify-content: center;
             align-items: center;
             margin: 0;
-            background-color: #652eff;
+            background-color: #000000ff;
             overflow: hidden;
         }
 
         #background-video {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            width: 100%;
-            height: auto;
-            margin-bottom: 20px;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
         }
 
         #startButton {
@@ -33,7 +33,7 @@
     padding: 50px 100px;
     background-color: #ffff00;
     color: black;
-    border: none;
+    border: 2px solid black;
     border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
@@ -50,18 +50,19 @@
 #leftButton {
     position: fixed;
     bottom: 15%;
-    left: 32%;
-    transform: translateX(-35%);
-    padding: 50px 100px;
+    left: 10%;
+    padding: 3vw 6vw;
     background-color: #e3ff37;
     color: black;
-    border: none;
+    border: 2px solid black;
     border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
-    font-size: 40px;
+    font-size: 3vw;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    min-width: 150px;
+    max-width: 30%;
 }
 
 #leftButton:hover {
@@ -72,24 +73,42 @@
 #rightButton {
     position: fixed;
     bottom: 15%;
-    right: 32%;
-    transform: translateX(35%);
-    padding: 50px 100px;
+    right: 10%;
+    padding: 3vw 6vw;
     background-color: #e3ff37;
     color: black;
-    border: none;
+    border: 2px solid black;
     border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
-    font-size: 40px;
+    font-size: 3vw;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    min-width: 150px;
+    max-width: 30%;
 }
 
 #rightButton:hover {
     background-color: #ffffff;
     cursor: pointer;
 }
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    #leftButton, #rightButton {
+        position: static;
+        display: block;
+        margin: 10px auto;
+        width: fit-content;
+        padding: 20px 40px;
+        font-size: 24px;
+    }
+    #leftButton {
+        bottom: auto;
+    }
+    #rightButton {
+        bottom: auto;
+    }
 
 
         a {
@@ -116,7 +135,7 @@
   // Generate the video playlist
   if (!empty($videos)) {
     $currentVideo = array_shift($videos); // play the first video
-    echo '<video id="videoPlayer" autoplay muted style="width: 100%; height: auto; object-fit: cover; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">';
+    echo '<video id="videoPlayer" autoplay muted style="width: 100vw; height: 100vh; object-fit: fill; position: fixed; top: 0; left: 0; z-index: -1;">';
     echo '<source src="'. $videoFolder. $currentVideo. '" type="video/'. pathinfo($currentVideo, PATHINFO_EXTENSION). '">';
     echo 'Your browser does not support the video tag.';
     echo '</video>';
